@@ -213,7 +213,6 @@ try
 		{	Write-Warning "The worksheet `"$($ProgressXLWorksheet)`" have no visible rows and/or columns."
 			continue;
 		}
-		#!!!REM: Does not work. Debug needed.
 		
 		for([Int32]$ColIdx = 0; $ColIdx -lt $ColCnt; $ColIdx++)
 		{	[Int32[]]$aBorderPosCol = $aBorderPosRow[$ColIdx];
@@ -254,8 +253,7 @@ try
 				}
 			}
 		}
-		#>
-		
+				
 		Write-Progress -Activity $ProgressActivity -Status "$ProgressMax/$ProgressMax rows processed" -CurrentOperation "Saving MD worksheet: `"$($ProgressXLWorksheet)`"" -PercentComplete 100;
 		
 		#Write-Host "Worksheet `"$($ProgressXLWorksheet)`" MD size = $($gSBOut.Length)";
